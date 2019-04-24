@@ -1,0 +1,8 @@
+div {
+    display: flex;
+    flex-direction: columns;
+    align-content: center;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}

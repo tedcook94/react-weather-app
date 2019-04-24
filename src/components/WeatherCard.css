@@ -1,0 +1,43 @@
+#link {
+    text-decoration: none;
+    color: gray;
+}
+
+div {
+    display: flex;
+    text-align: center;
+}
+
+#container {
+    flex-direction: column;
+    align-content: center; 
+    height: 100%;
+    margin: 5px;
+}
+
+p {
+    margin: 5px;
+    margin-top: 10px;
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#temps {
+    flex-direction: row;
+    align-items: stretch;
+    width: 50%;
+    margin-left: 25%;
+    margin-top: 10px;
+}
+
+#temps span {
+    width: 50%;
+}
+
+#high {
+    color: black;
+}
