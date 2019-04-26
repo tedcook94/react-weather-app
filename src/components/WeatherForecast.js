@@ -5,14 +5,16 @@ import './WeatherForecast.css'
 
 export default function WeatherForecast({ days }) {
     return (
-        <div>
-            {days.data.map((day, i) => <WeatherCard
-                                    key={i} 
-                                    dayOfWeek={day.dow} 
-                                    icon={day.icon}
-                                    high={day.high}
-                                    low={day.low} 
-                                />)}
+        <div id='forecast-container'>
+            <div id='cards'>
+                {days.data.map((day, i) => <WeatherCard
+                                        key={i} 
+                                        dayOfWeek={day.dow} 
+                                        icon={day.icon}
+                                        high={day.high}
+                                        low={day.low} 
+                                    />)}
+            </div>
         </div>
     )
 }

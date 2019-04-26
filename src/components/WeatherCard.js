@@ -6,9 +6,9 @@ import './WeatherCard.css'
 export default function WeatherCard({ dayOfWeek, icon, high, low }) {
   return (
     <Link id='link' to={`/dow/${dayOfWeek}`}>
-      <div id='container'>
+      <div id='card-container'>
         <p>{dayOfWeek}</p>
-        <img src={require(`../resources/${icon}.png`)} alt={icon} width='60%' />
+        <img src={require(`../resources/${icon}.png`)} alt={icon} />
         <div id='temps'>
           <span id='high'>{high}&#176;</span>
           <span id='low'>{low}&#176;</span>
