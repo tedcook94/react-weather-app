@@ -6,6 +6,7 @@
 #card-container p {
     margin: 5px;
     margin-top: 10px;
+    text-align: center;
 }
 
 #card-container img {
@@ -19,6 +20,7 @@
     flex-direction: row;
     align-items: stretch;
     margin-top: 10px;
+    text-align: center;
 }
 
 #high {
