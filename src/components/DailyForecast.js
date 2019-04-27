@@ -18,7 +18,9 @@ export default function DailyForecast({ hours }) {
                                         feel={hour.feel}
                                     />)}
             </div>
-            <p id='api-link'>Weather data provided by <a href="https://www.weatherbit.io/">Weatherbit.io</a></p>
+            <div>
+            <p id='api-link'>Weather for {`${hours.city_name}, ${hours.state_code}`} - Data provided by <a href="https://www.weatherbit.io/">Weatherbit.io</a></p>
+            </div>
         </div>
     )
 }
