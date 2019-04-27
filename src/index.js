@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import './index.css'
 import { getForecast } from './utils/api'
 import WeatherForecast from './components/WeatherForecast'
-import DailyForecast from './components/DailyForecast'
 import Loading from './components/Loading'
 import * as serviceWorker from './serviceWorker'
 
