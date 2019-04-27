@@ -1,11 +1,12 @@
-import React, { Component } from 'react';
-import { render } from 'react-dom';
+import React, { Component } from 'react'
+import { render } from 'react-dom'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-import './index.css';
+import './index.css'
 import { getForecast } from './utils/api'
-import WeatherForecast from './components/WeatherForecast';
+import WeatherForecast from './components/WeatherForecast'
+import DailyForecast from './components/DailyForecast'
 import Loading from './components/Loading'
-import * as serviceWorker from './serviceWorker';
+import * as serviceWorker from './serviceWorker'
 
 class App extends Component {
     state = { 
