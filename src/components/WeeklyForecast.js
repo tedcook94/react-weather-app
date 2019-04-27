@@ -1,9 +1,9 @@
-import React from 'react';
+import React from 'react'
 import PropTypes from 'prop-types'
 import WeatherCard from './WeatherCard'
-import './WeatherForecast.css'
+import './WeeklyForecast.css'
 
-export default function WeatherForecast({ days }) {
+export default function WeeklyForecast({ days }) {
     return (
         <div id='forecast-container'>
             <h1>Weekly Forecast</h1>
@@ -11,16 +11,16 @@ export default function WeatherForecast({ days }) {
                 {days.data.map((day, i) => <WeatherCard
                                         key={i} 
                                         dayOfWeek={day.dow} 
+                                        weather={day.weather}
                                         icon={day.icon}
                                         high={day.high}
                                         low={day.low} 
                                     />)}
             </div>
-            <p id='api-link'>Weather data provided by <a href="https://www.weatherbit.io/">Weatherbit.io</a></p>
         </div>
     )
 }
 
-WeatherForecast.propTypes = {
+WeeklyForecast.propTypes = {
     days: PropTypes.object.isRequired
 }

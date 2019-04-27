@@ -1,15 +1,16 @@
 import React, { Component } from 'react'
 import { render } from 'react-dom'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import './index.css'
-import { getForecast } from './utils/api'
-import WeatherForecast from './components/WeatherForecast'
+import { getDailyForecast, getHourlyForecast } from './utils/api'
+import WeeklyForecast from './components/WeeklyForecast'
+import DailyForecast from './components/DailyForecast'
 import Loading from './components/Loading'
 import * as serviceWorker from './serviceWorker'
 
 class App extends Component {
     state = { 
         days: null,
+        hours: null,
         loading: true 
     }
 
@@ -23,29 +24,24 @@ class App extends Component {
             loading: true 
         })
 
-        getForecast(7)
+        getDailyForecast(7)
             .then((days) => {
-                this.setState({
-                    days,
-                    loading: false
-                })
+                this.setState({days})
+                getHourlyForecast(24)
+                    .then((hours) => {
+                        this.setState({hours, loading: false})
+                    })
             })
     }
 
     render() {
-        const { days, loading } = this.state
+        const { days, hours, loading } = this.state
         if (loading) return <Loading />
         else return (
-            <Router>
-                <Switch>
-                    <Route 
-                        exact
-                        path='/'
-                        render={() => <WeatherForecast days={days} />}
-                    />
-                    <Route render={() => <h1>404: Page not found</h1>} />
-                </Switch>
-            </Router>
+            <div>
+                <WeeklyForecast days={days} />
+                <DailyForecast hours={hours} /> 
+            </div>
         )
     }
 }
