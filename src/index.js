@@ -43,6 +43,7 @@ class App extends Component {
                         path='/'
                         render={() => <WeatherForecast days={days} />}
                     />
+                    <Route render={() => <h1>404: Page not found</h1>} />
                 </Switch>
             </Router>
         )
